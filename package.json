@@ -1,0 +1,26 @@
+{
+  "name": "project-miliaran",
+  "version": "1.0.0",
+  "description": "jadimiliar",
+  "keywords": [
+    "jadimiliar"
+  ],
+  "homepage": "https://github.com/Siddhiq30/project-Miliaran#readme",
+  "bugs": {
+    "url": "https://github.com/Siddhiq30/project-Miliaran/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Siddhiq30/project-Miliaran.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

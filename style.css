@@ -1,0 +1,1300 @@
+/* ================================================================
+   PORTOFOLIO — style.css
+   Tema: Dark Tech / Neon Blue Minimal
+   Struktur: Variables → Reset → Base → Navbar → Hero → Sections
+================================================================ */
+
+
+/* ================================================================
+   1. CSS VARIABLES — Warna, font, dan ukuran yang bisa diubah
+================================================================ */
+:root {
+  /* Palet warna utama */
+  --color-bg:          #050d1a;      /* Latar halaman utama */
+  --color-bg-2:        #081020;      /* Latar section alternatif */
+  --color-surface:     #0c1a2e;      /* Kartu / permukaan komponen */
+  --color-surface-2:   #0f2040;      /* Kartu dengan aksen lebih terang */
+  --color-border:      #162840;      /* Warna garis tepi */
+
+  /* Warna teks */
+  --color-text:        #e2ecf8;      /* Teks utama (terang) */
+  --color-text-muted:  #6b8aaa;      /* Teks sekunder / sub-label */
+  --color-text-dim:    #3a5570;      /* Teks sangat redup */
+
+  /* Aksen neon biru */
+  --color-neon:        #00d4ff;      /* Biru neon utama */
+  --color-neon-dim:    rgba(0, 212, 255, 0.15);  /* Neon transparan */
+  --color-neon-glow:   rgba(0, 212, 255, 0.4);   /* Efek glow neon */
+  --color-accent:      #0a84ff;      /* Biru standar / tombol */
+  --color-accent-dark: #0057cc;      /* Biru lebih gelap */
+
+  /* Font keluarga */
+  --font-display:  'Syne', sans-serif;     /* Judul besar */
+  --font-mono:     'DM Mono', monospace;   /* Label teknis / kode */
+  --font-body:     'Inter', sans-serif;    /* Teks paragraf */
+
+  /* Ukuran & jarak */
+  --navbar-h:   70px;
+  --radius:     12px;
+  --radius-sm:  8px;
+  --radius-lg:  20px;
+  --section-py: 100px;
+
+  /* Bayangan */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-neon: 0 0 20px var(--color-neon-glow), 0 0 60px rgba(0, 212, 255, 0.15);
+
+  /* Transisi */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ================================================================
+   2. RESET & BASE — Aturan dasar untuk semua elemen
+================================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;       /* Smooth scrolling antar section */
+  scroll-padding-top: var(--navbar-h);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;            /* Hindari scroll horizontal */
+}
+
+/* Scrollbar kustom */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-neon-dim); }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul { list-style: none; }
+
+/* Container pembungkus konten agar tidak terlalu lebar */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Utilitas section */
+.section {
+  padding: var(--section-py) 0;
+}
+
+
+/* ================================================================
+   3. LABEL SECTION — Penanda nomor & nama section
+================================================================ */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.label-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-neon);
+  letter-spacing: 2px;
+}
+
+.label-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-text-muted);
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-border), transparent);
+}
+
+/* Judul section */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin-bottom: 56px;
+}
+
+/* Efek teks bercahaya (glow) */
+.text-glow {
+  color: var(--color-neon);
+  text-shadow: 0 0 20px var(--color-neon-glow);
+}
+
+
+/* ================================================================
+   4. BUTTONS — Tombol aksi utama
+================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+/* Tombol utama biru */
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: #0070e0;
+  box-shadow: 0 0 30px rgba(10, 132, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Tombol outline / transparan */
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+  box-shadow: 0 0 15px var(--color-neon-dim);
+  transform: translateY(-2px);
+}
+
+/* Tombol kecil untuk kartu project */
+.btn-small {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary-small {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary-small:hover {
+  background: #0070e0;
+  transform: translateY(-1px);
+}
+
+.btn-ghost-small {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.btn-ghost-small:hover {
+  color: var(--color-neon);
+  border-color: var(--color-neon);
+}
+
+
+/* ================================================================
+   5. NAVBAR — Navigasi tetap di atas
+================================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-h);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+/* Efek kaca buram saat di-scroll */
+.navbar.scrolled {
+  background: rgba(5, 13, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo / nama di navbar */
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--color-neon);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.nav-logo:hover {
+  text-shadow: 0 0 12px var(--color-neon-glow);
+}
+
+/* Daftar link navigasi */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+  background: var(--color-neon-dim);
+}
+
+/* Tombol CTA di navbar */
+.nav-cta {
+  background: var(--color-accent);
+  color: #fff !important;
+  padding: 8px 20px;
+}
+
+.nav-cta:hover {
+  background: #0070e0;
+  box-shadow: 0 0 15px rgba(10, 132, 255, 0.4);
+}
+
+/* Hamburger button (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  display: block;
+  transition: var(--transition);
+}
+
+/* Animasi hamburger → silang */
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ================================================================
+   6. HERO SECTION — Bagian utama sambutan
+================================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--navbar-h);
+}
+
+/* Latar grid kotak-kotak */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.25;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+}
+
+/* Lingkaran cahaya di belakang konten */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 60px 24px;
+  max-width: 700px;
+}
+
+/* Badge "Available" di atas nama */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  padding: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+  animation: fadeDown 0.6s ease;
+}
+
+/* Titik hijau berkedip-kedip */
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* Nama besar di hero */
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+
+/* Nama dengan efek highlight */
+.name-highlight {
+  color: var(--color-neon);
+  text-shadow: var(--shadow-neon);
+}
+
+/* Foto profil */
+.hero-photo-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 28px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+/* Cincin berputar di sekitar foto */
+.hero-photo-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--color-neon);
+  border-right-color: var(--color-neon);
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: 0 0 30px var(--color-neon-dim);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Teks deskripsi singkat */
+.hero-description {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto 36px;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+
+.hero-description strong { color: var(--color-text); }
+.hero-description em { color: var(--color-neon); font-style: normal; }
+
+/* Tombol di hero */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+/* Statistik kecil */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-neon);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--color-border);
+}
+
+/* Indikator scroll ke bawah */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-indicator span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-neon), transparent);
+  animation: scrollAnim 2s ease infinite;
+}
+
+@keyframes scrollAnim {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+
+/* ================================================================
+   7. ABOUT SECTION — Tentang saya
+================================================================ */
+.about {
+  background: var(--color-bg-2);
+  position: relative;
+}
+
+/* Dekorasi titik-titik di pojok */
+.about::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.about-text strong { color: var(--color-text); }
+
+/* Tags minat */
+.about-interests h3 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-dim);
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.tag:hover {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+  background: var(--color-neon-dim);
+}
+
+/* Kartu info di sebelah kanan */
+.about-card {
+  position: sticky;
+  top: calc(var(--navbar-h) + 24px);
+}
+
+.about-card-inner {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.card-info-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-icon {
+  font-size: 20px;
+  width: 36px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card-info-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-dim);
+}
+
+.card-info-value {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+
+/* ================================================================
+   8. SKILLS SECTION — Kartu skill dengan progress bar
+================================================================ */
+.skills {
+  background: var(--color-bg);
+}
+
+/* Grid 2 kolom untuk kartu skill */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Kartu individual skill */
+.skill-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.skill-card:hover::before { opacity: 1; }
+
+/* Kartu skill yang disorot / unggulan */
+.skill-card--highlight {
+  border-color: rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, var(--color-surface), rgba(0, 212, 255, 0.04));
+}
+
+.skill-card--highlight::before { opacity: 0.6; }
+
+/* Bagian atas kartu: icon, nama, persen */
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.skill-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.skill-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.skill-category {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-dim);
+}
+
+.skill-percent {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-neon);
+  font-weight: 500;
+}
+
+/* Track progress bar */
+.skill-bar {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+/* Isi progress bar — lebar diset dari JS via --fill */
+.skill-fill {
+  height: 100%;
+  width: 0;                        /* Mulai dari 0, animasi dijalankan JS */
+  background: linear-gradient(90deg, var(--color-accent), var(--color-neon));
+  border-radius: 99px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px var(--color-neon-dim);
+}
+
+/* Ketika JS menambahkan .animated, isi bar melebar */
+.skill-fill.animated {
+  width: var(--fill);
+}
+
+
+/* ================================================================
+   9. PROJECTS SECTION — Kartu proyek
+================================================================ */
+.projects {
+  background: var(--color-bg-2);
+}
+
+/* Grid 2 kolom untuk project */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Kartu proyek individual */
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(to top, rgba(0, 212, 255, 0.05), transparent);
+  transition: height 0.4s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(0, 212, 255, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover::after { height: 100%; }
+
+/* Kartu proyek unggulan (project 1) */
+.project-card--featured {
+  border-color: rgba(0, 212, 255, 0.2);
+  background: linear-gradient(135deg, var(--color-surface), rgba(0, 212, 255, 0.03));
+}
+
+/* Nomor dekoratif di pojok kiri atas */
+.project-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-dim);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tags kategori di project */
+.project-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.project-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-neon);
+  background: var(--color-neon-dim);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.project-desc {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+/* Chip teknologi yang digunakan */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.project-tech span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-dim);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+/* Tombol aksi di kartu project */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+
+/* ================================================================
+   10. EXPERIENCE SECTION — Timeline pengalaman
+================================================================ */
+.experience {
+  background: var(--color-bg);
+}
+
+/* Container timeline */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+/* Garis vertikal di kiri */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-neon), transparent);
+}
+
+/* Item timeline */
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+/* Titik di garis timeline */
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-neon);
+  box-shadow: 0 0 8px var(--color-neon-glow);
+  z-index: 1;
+}
+
+/* Konten timeline */
+.timeline-content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: var(--transition);
+}
+
+.timeline-content:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+  transform: translateX(4px);
+}
+
+/* Meta: tanggal + badge kategori */
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-dim);
+  letter-spacing: 1px;
+}
+
+/* Badge warna berdasarkan kategori */
+.timeline-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.badge--org     { background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3); }
+.badge--train   { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge--project { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge--lab     { background: rgba(0, 212, 255, 0.10);  color: var(--color-neon); border: 1px solid rgba(0, 212, 255, 0.25); }
+
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.timeline-place {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.timeline-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+
+/* ================================================================
+   11. CONTACT SECTION — Kartu kontak
+================================================================ */
+.contact {
+  background: var(--color-bg-2);
+}
+
+/* Grid 2x2 untuk kartu kontak */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Kartu kontak individual */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-card:hover::before { transform: scaleY(1); }
+
+/* Icon kontak */
+.contact-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+}
+
+.contact-icon--green { color: #22c55e; }
+.contact-icon--pink  { color: #ec4899; }
+
+.contact-card:hover .contact-icon {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+  background: var(--color-neon-dim);
+}
+
+.contact-info { flex: 1; }
+
+.contact-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-dim);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.contact-arrow {
+  color: var(--color-text-dim);
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+.contact-card:hover .contact-arrow {
+  color: var(--color-neon);
+  transform: translateX(4px);
+}
+
+
+/* ================================================================
+   12. FOOTER — Bagian bawah
+================================================================ */
+.footer {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: 40px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-neon);
+}
+
+.footer-text {
+  color: var(--color-text-dim);
+  font-size: 13px;
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+}
+
+.footer-links a:hover { color: var(--color-neon); }
+
+
+/* ================================================================
+   13. ANIMATIONS — Fade-in saat scroll
+================================================================ */
+/* Kelas awal sebelum animasi */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Kelas akhir ketika elemen masuk viewport */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay untuk kartu-kartu */
+.fade-in:nth-child(1) { transition-delay: 0.05s; }
+.fade-in:nth-child(2) { transition-delay: 0.10s; }
+.fade-in:nth-child(3) { transition-delay: 0.15s; }
+.fade-in:nth-child(4) { transition-delay: 0.20s; }
+
+/* Animasi masuk dari bawah untuk hero */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ================================================================
+   14. RESPONSIVE — Tampilan di layar kecil (HP)
+================================================================ */
+
+/* Tablet: max 900px */
+@media (max-width: 900px) {
+  :root { --section-py: 72px; }
+
+  /* About: susun vertikal */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-card { position: static; }
+
+  /* Skills: 1 kolom */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projects: 1 kolom */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact: 1 kolom */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile: max 600px */
+@media (max-width: 600px) {
+  :root { --section-py: 60px; }
+
+  /* Tampilkan tombol hamburger */
+  .nav-toggle { display: flex; }
+
+  /* Sembunyikan nav links, tampilkan saat .open */
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: var(--navbar-h) 0 0 0;
+    background: rgba(5, 13, 26, 0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    backdrop-filter: blur(16px);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-link {
+    font-size: 18px;
+    padding: 14px 40px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero: kecilkan font */
+  .hero-name {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .hero-stats { gap: 20px; }
+
+  /* Timeline: kurangi indentasi */
+  .timeline { padding-left: 24px; }
+
+  /* Footer: tengah */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Contact card: lebih compact */
+  .contact-card { padding: 18px 20px; }
+  .contact-icon { width: 42px; height: 42px; }
+}

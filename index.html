@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Siddhiq Fadhilah — Portofolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket"></span><span class="logo-bracket"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#projects">Project</a></li>
+      <li><a href="#experience">Pengalaman</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero" id="home">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag animate-in delay-1">D4 Teknik Elektronika Industri · Politeknik Negeri Padang</p>
+      <h1 class="hero-name animate-in delay-2">
+        Muhammad<br />
+        <span class="accent">Siddhiq</span><br />
+        Fadhilah
+      </h1>
+      <p class="hero-sub animate-in delay-3">
+        Merancang sistem otomasi industri yang cerdas,<br class="br-desk"/>
+        dari rangkaian sensor hingga logika kendali.
+      </p>
+      <div class="hero-cta animate-in delay-4">
+        <a href="#projects" class="btn-primary">Lihat Project</a>
+        <a href="#contact" class="btn-ghost">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="hero-badge animate-in delay-5">
+      <div class="badge-ring"></div>
+      <div class="badge-inner">
+        <i class="fas fa-microchip"></i>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">01 — Tentang Saya</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title">Teknisi muda yang<br /><span class="accent">berpikir sistematis.</span></h2>
+          <p>
+            Saya Muhammad Siddhiq Fadhilah, mahasiswa D4 Teknik Elektronika Industri di Politeknik Negeri Padang. 
+            Dengan latar pendidikan vokasi yang kuat, saya dilatih untuk berpikir secara teknis dan solutif dalam menghadapi tantangan nyata di dunia industri.
+          </p>
+          <p>
+            Minat utama saya berada pada bidang <strong>PLC</strong>, <strong>otomasi industri</strong>, <strong>mikrokontroler</strong>, dan <strong>sistem kendali</strong>. 
+            Saya percaya bahwa teknologi industri yang cerdas lahir dari pemahaman mendalam — mulai dari logika ladder diagram hingga integrasi sensor dan aktuator dalam sebuah sistem nyata.
+          </p>
+          <p>
+            Saya adalah tipe orang yang tidak berhenti pada teori. Setiap konsep yang dipelajari selalu saya implementasikan dalam bentuk prototipe atau simulasi, karena bagi saya, 
+            belajar yang sesungguhnya terjadi ketika kode berjalan dan sistem bekerja sesuai rancangan.
+          </p>
+          <p>
+            Di luar teknis, saya terbiasa berkolaborasi dalam tim lintas bidang, terbiasa mengidentifikasi akar masalah, dan selalu mendorong diri untuk mengikuti perkembangan teknologi industri — khususnya di era <strong>Industri 4.0</strong> dan <strong>IoT</strong>.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">7+</span>
+            <span class="stat-desc">Project Selesai</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">9+</span>
+            <span class="stat-desc">Teknologi Dikuasai</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">D4</span>
+            <span class="stat-desc">Teknik Elektronika Industri</span>
+          </div>
+          <div class="stat-card highlight">
+            <span class="stat-num"><i class="fas fa-circle-notch fa-spin"></i></span>
+            <span class="stat-desc">Aktif Belajar & Berkembang</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SKILLS ░░ -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-label">02 — Keahlian</div>
+      <h2 class="section-title">Skill &amp; <span class="accent">Kompetensi</span></h2>
+      <p class="section-sub">Kemampuan teknis yang dibangun melalui pembelajaran aktif, praktikum, dan pengerjaan project nyata.</p>
+
+      <div class="skill-categories">
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-industry"></i>
+            <h3>Otomasi &amp; Kontrol Industri</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>PLC Ladder Logic</strong>
+                <p>Pemrograman PLC menggunakan Ladder Diagram untuk sistem kontrol sekuensial dan otomasi proses industri, termasuk penggunaan instruksi timer, counter, dan kondisi logika industri.</p>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>LabVIEW</strong>
+                <p>Perancangan antarmuka instrumen virtual (VI) untuk akuisisi data, monitoring sistem real-time, dan kontrol berbasis komputer menggunakan platform National Instruments.</p>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>Sistem Kontrol &amp; Otomasi Industri</strong>
+                <p>Pemahaman konsep loop kontrol terbuka dan tertutup, logika kendali proses, serta penerapannya dalam lingkungan industri manufaktur dan sistem otomasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-microchip"></i>
+            <h3>Mikrokontroler &amp; Embedded Systems</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>Arduino IDE</strong>
+                <p>Pengembangan sistem embedded berbasis Arduino, mulai dari pemrograman sensor, aktuator, hingga integrasi perangkat keras untuk kebutuhan prototipe otomasi.</p>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>ESP32</strong>
+                <p>Pengembangan aplikasi IoT menggunakan ESP32 dengan fitur Wi-Fi dan Bluetooth, mencakup konektivitas nirkabel, sensor fusion, dan kendali sistem jarak jauh.</p>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>Integrasi Sensor &amp; Aktuator</strong>
+                <p>Kemampuan merangkai dan memprogram berbagai jenis sensor (jarak, cahaya, gerak, IMU) serta aktuator (motor, relay, servo) dalam satu sistem yang terintegrasi dan fungsional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-code"></i>
+            <h3>Simulasi &amp; Pemrograman</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>Proteus</strong>
+                <p>Simulasi rangkaian elektronika dan sistem embedded secara digital sebelum implementasi fisik, membantu proses verifikasi desain dan meminimalkan risiko kesalahan hardware.</p>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>Python Dasar</strong>
+                <p>Penggunaan Python untuk pemrosesan data, otomatisasi skrip, dan pengolahan citra digital menggunakan library seperti OpenCV dalam konteks sistem visi industri.</p>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <strong>HTML &amp; CSS Dasar</strong>
+                <p>Pembuatan antarmuka web statis untuk keperluan dokumentasi teknis, dashboard sederhana, dan portofolio profesional berbasis web.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROJECTS ░░ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label">03 — Project</div>
+      <h2 class="section-title">Project <span class="accent">yang Dikerjakan</span></h2>
+      <p class="section-sub">Kumpulan proyek teknis yang dirancang dan diimplementasikan selama masa perkuliahan, mencerminkan kemampuan problem solving dan penguasaan teknologi.</p>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-num">01</div>
+          <div class="project-icon"><i class="fas fa-warehouse"></i></div>
+          <h3>Sistem Keamanan Gudang Otomatis</h3>
+          <p>Sistem keamanan cerdas untuk gudang yang mampu mendeteksi intrusi melalui pintu dan pergerakan objek secara bersamaan. Mengintegrasikan Reed Switch untuk deteksi status pintu dan sensor Infrared untuk memantau pergerakan di dalam area gudang, dengan output notifikasi berbasis alarm.</p>
+          <div class="tech-tags">
+            <span>Arduino Uno</span>
+            <span>Reed Switch</span>
+            <span>Infrared Sensor</span>
+            <span>C/C++</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">02</div>
+          <div class="project-icon"><i class="fas fa-solar-panel"></i></div>
+          <h3>Prototype Panel Surya Otomatis</h3>
+          <p>Prototipe sistem penggerak panel surya yang secara otomatis mengikuti arah sumber cahaya paling kuat menggunakan dua sensor LDR sebagai input referensi. Sistem ini dirancang untuk memaksimalkan efisiensi penyerapan energi surya melalui mekanisme Solar Tracking berbasis servo motor.</p>
+          <div class="tech-tags">
+            <span>Mikrokontroler</span>
+            <span>LDR Sensor</span>
+            <span>Servo Motor</span>
+            <span>Arduino IDE</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">03</div>
+          <div class="project-icon"><i class="fas fa-radar"></i></div>
+          <h3>Sistem Keamanan Jarak Aman</h3>
+          <p>Sistem deteksi jarak real-time yang memberikan peringatan dini ketika objek atau orang mendekati area tertentu melewati ambang batas yang telah ditentukan. Cocok diimplementasikan sebagai sistem keselamatan di area mesin industri atau zona terbatas.</p>
+          <div class="tech-tags">
+            <span>HC-SR04</span>
+            <span>Arduino</span>
+            <span>Buzzer Alarm</span>
+            <span>LED Indikator</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">04</div>
+          <div class="project-icon"><i class="fas fa-traffic-light"></i></div>
+          <h3>Traffic Light 4 Simpang Berbasis PLC</h3>
+          <p>Perancangan dan implementasi sistem kendali lampu lalu lintas persimpangan 4 arah menggunakan PLC Omron CP1E. Program dibuat menggunakan Ladder Diagram dengan manajemen timer dan sekuens yang terstruktur, mensimulasikan kondisi persimpangan jalan nyata secara akurat.</p>
+          <div class="tech-tags">
+            <span>PLC Omron CP1E</span>
+            <span>Ladder Diagram</span>
+            <span>CX-Programmer</span>
+            <span>Timer/Counter</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">05</div>
+          <div class="project-icon"><i class="fas fa-robot"></i></div>
+          <h3>Robot Self-Balancing</h3>
+          <p>Robot dua roda yang mampu menjaga keseimbangan secara mandiri menggunakan algoritma PID berbasis data dari sensor inertial. MPU6050 digunakan sebagai unit pengukuran inersial (IMU) untuk membaca sudut kemiringan, sementara ESP32 memproses data dan mengontrol motor secara presisi.</p>
+          <div class="tech-tags">
+            <span>ESP32</span>
+            <span>MPU6050 (IMU)</span>
+            <span>Algoritma PID</span>
+            <span>Motor Driver</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">06</div>
+          <div class="project-icon"><i class="fas fa-hand-paper"></i></div>
+          <h3>Robot Arm Kendali Joystick</h3>
+          <p>Lengan robot dengan beberapa derajat kebebasan (DOF) yang dikendalikan secara manual menggunakan joystick analog. Sistem ini menerjemahkan input posisi joystick menjadi gerakan servo yang presisi, memberikan pengalaman langsung dalam pemrograman kinematika robot sederhana.</p>
+          <div class="tech-tags">
+            <span>Servo Motor</span>
+            <span>Joystick Analog</span>
+            <span>Arduino</span>
+            <span>PWM Control</span>
+          </div>
+        </div>
+
+        <div class="project-card project-card-wide">
+          <div class="project-num">07</div>
+          <div class="project-icon"><i class="fas fa-eye"></i></div>
+          <h3>Pengolahan Citra Digital</h3>
+          <p>Implementasi teknik pengolahan citra digital menggunakan Python dan library OpenCV untuk keperluan analisis visual. Mencakup proses filtering, deteksi tepi, segmentasi objek berdasarkan warna, dan operasi morfologi citra — fondasi penting bagi sistem visi mesin industri modern.</p>
+          <div class="tech-tags">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>Image Processing</span>
+            <span>Computer Vision</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ EXPERIENCE ░░ -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-label">04 — Pengalaman</div>
+      <h2 class="section-title">Pengembangan Diri <span class="accent"></span></h2>
+      <p class="section-sub"></p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="tl-type">Pendidikan</span>
+            </div>
+            <h3>D4 Teknik Elektronika Industri</h3>
+            <p class="tl-place">Politeknik Negeri Padang</p>
+            <p>Menempuh pendidikan sarjana terapan dengan kurikulum yang berorientasi pada praktik industri. Mempelajari sistem kendali, pemrograman PLC, elektronika daya, mikrokontroler, dan instrumentasi industri sebagai kompetensi inti.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="tl-type">Kegiatan Akademik</span>
+            </div>
+            <h3>Praktikum Laboratorium Teknik</h3>
+            <p class="tl-place">Laboratorium Elektronika &amp; Kendali · Politeknik Negeri Padang</p>
+            <p>Aktif mengikuti sesi praktikum intensif di laboratorium, mencakup perancangan rangkaian, pemrograman PLC, simulasi sistem kontrol, dan pengujian perangkat keras. Terbiasa bekerja dalam tim kecil untuk menyelesaikan skenario praktikum berbasis masalah industri nyata.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="tl-type">Pengembangan Diri</span>
+            </div>
+            <h3>Proyek Mandiri &amp; Kolaboratif</h3>
+            <p class="tl-place">Tim Mahasiswa · Politeknik Negeri Padang</p>
+            <p>Berpartisipasi aktif dalam pengerjaan proyek teknis bersama rekan mahasiswa — mulai dari perencanaan konsep, pembagian tugas, implementasi hardware dan software, hingga presentasi dan evaluasi hasil. Pengalaman ini membangun kemampuan komunikasi teknis dan manajemen proyek dalam tim.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="tl-type">Pengembangan Teknologi</span>
+            </div>
+            <h3>Self-Learning: IoT &amp; Embedded Systems</h3>
+            <p class="tl-place">Independent · 2022 – Sekarang</p>
+            <p>Secara konsisten mengembangkan kompetensi mandiri di bidang IoT, pemrograman ESP32, dan pengolahan citra — mengikuti perkembangan teknologi Industri 4.0 melalui dokumentasi resmi, forum teknis, dan eksperimen prototipe pribadi.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CONTACT ░░ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-label">05 — Kontak</div>
+      <h2 class="section-title">Mari <span class="accent">Terhubung</span></h2>
+      <p class="section-sub contact-intro">
+        Saya terbuka untuk peluang magang, kolaborasi proyek, maupun diskusi seputar teknologi otomasi dan sistem industri. 
+        Jangan ragu untuk menghubungi saya — satu pesan bisa menjadi awal dari kerja sama yang bermakna.
+      </p>
+
+      <div class="contact-grid">
+
+        <a href="mailto:siddhiqfadhilah@email.com" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">siddhiqfadhilah@gmail.com</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a href="https://wa.me/6281363326360" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+62 813 6332 6360</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a href="https://instagram.com/username" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@Siddhiq_</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a href="https://github.com/Siddhiq30" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/Siddhiq30</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+      </div>
+
+      <div class="contact-closing">
+        <div class="closing-line"></div>
+        <p>
+          Berlokasi di <strong>Padang, Sumatera Barat</strong> · Tersedia untuk posisi <strong>magang</strong> dan <strong>kerja industri</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo"><span class="logo-bracket">&lt;</span>MSF<span class="logo-bracket">/&gt;</span></span>
+      <p>© 2025 Muhammad Siddhiq Fadhilah · Dibuat dengan <i class="fas fa-heart accent"></i> menggunakan HTML &amp; CSS</p>
+      <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+
+    // Close nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+      '.about-text, .about-stats, .skill-category, .project-card, .timeline-item, .contact-card, .stat-card'
+    ).forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+
+    // Stagger children
+    document.querySelectorAll('.skill-category').forEach((cat, i) => {
+      cat.style.transitionDelay = `${i * 0.1}s`;
+    });
+    document.querySelectorAll('.project-card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.08}s`;
+    });
+    document.querySelectorAll('.contact-card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.08}s`;
+    });
+    document.querySelectorAll('.timeline-item').forEach((item, i) => {
+      item.style.transitionDelay = `${i * 0.1}s`;
+    });
+    document.querySelectorAll('.stat-card').forEach((item, i) => {
+      item.style.transitionDelay = `${i * 0.08}s`;
+    });
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
+      });
+      navItems.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+      });
+    });
+  </script>
+</body>
+</html>
